@@ -1,0 +1,296 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
+
+/* Root variables for consistency and easy theming */
+:root {
+    --primary-color: #c8fd70;
+    --primary-color-dark: #91e506;
+    --text-dark: #000000;
+    --text-light: #9ea4a5;
+    --white: #ffffff;
+    --max-width: 1200px;
+    --header-font: "Orbitron", sans-serif;
+    --gradient-1: linear-gradient(to right, var(--primary-color), var(--primary-color-dark), var(--primary-color));
+    --gradient-2: linear-gradient(to right bottom, #1e272a, #000000);
+    --box-shadow-light: 0 2px 5px rgba(0, 0, 0, 0.1);
+    --transition-speed: 0.3s;
+    --border-radius: 8px;
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Noto Sans', sans-serif;
+    background-color: var(--text-dark);
+    color: var(--text-light);
+    scroll-behavior: smooth;
+    line-height: 1.6;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    transition: color var(--transition-speed);
+    color: inherit;
+}
+
+img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* Navbar styles */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: var(--text-dark);
+    color: var(--white);
+    z-index: 10;
+    box-shadow: var(--box-shadow-light);
+    transition: top var(--transition-speed);
+}
+
+.navHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+}
+
+.navLogo a {
+    font-family: var(--header-font);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-color-dark);
+}
+
+.navMenuBtn {
+    font-size: 1.5rem;
+    color: var(--white);
+    cursor: pointer;
+    display: none;
+}
+
+.navLinks {
+    display: flex;
+    list-style: none;
+    gap: 1.5rem;
+}
+
+.navLinks a {
+    color: var(--text-light);
+    padding: 0.5rem 1rem;
+    border-radius: var(--border-radius);
+    transition: background-color var(--transition-speed);
+}
+
+.navLinks a:hover {
+    background-color: var(--primary-color-dark);
+    color: var(--text-dark);
+}
+
+.navBtn .btn {
+    padding: 0.5rem 1rem;
+    border: 2px solid var(--primary-color-dark);
+    border-radius: var(--border-radius);
+    background-color: var(--text-dark);
+    color: var(--primary-color-dark);
+    cursor: pointer;
+    transition: background-color var(--transition-speed), color var(--transition-speed);
+}
+
+.navBtn .btn:hover {
+    background-color: var(--primary-color-dark);
+    color: var(--text-dark);
+}
+
+/* Header styles */
+.header {
+    padding: 6rem 2rem;
+    text-align: center;
+    background: url('../images/header-bg.jpg') no-repeat center center/cover;
+    color: var(--white);
+}
+
+.headerContent h1 {
+    font-size: 3rem;
+    font-family: var(--header-font);
+    margin-bottom: 1rem;
+    color: var(--white);
+    line-height: 1.2;
+}
+
+.headerContent h1 span {
+    color: var(--primary-color-dark);
+}
+
+.sectionDescription {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text-light);
+    margin-bottom: 2rem;
+}
+
+.headerBtn {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.headerBtn .btn {
+    font-weight: 600;
+    background-color: var(--primary-color-dark);
+    color: var(--text-dark);
+    padding: 0.75rem 1.5rem;
+}
+
+.headerBtn a {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--text-light);
+    transition: color var(--transition-speed);
+}
+
+.headerBtn a span {
+    padding: 5px 10px;
+    font-size: 1.5rem;
+    color: var(--text-light);
+    background-image: var(--gradient-2);
+    border-radius: 50%;
+    box-shadow: -1px -1px 4px rgba(255, 255, 255, 0.5);
+}
+
+.headerImage img {
+    max-width: 100%;
+    border-radius: var(--border-radius);
+    margin-top: 2rem;
+}
+
+.sectionContainer {
+    padding: 5rem 1rem;
+    text-align: center;
+    color: var(--white);
+}
+
+.sectionHeader {
+    font-family: var(--header-font);
+    font-weight: 600;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--white);
+}
+
+.sectionHeader span {
+    color: var(--primary-color-dark);
+}
+
+.discoverGradient {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+    padding: 2rem;
+    background-image: var(--gradient-2);
+    border-radius: var(--border-radius);
+}
+
+.discoverCard {
+    padding: 2rem;
+    background-color: var(--text-dark);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow-light);
+    transition: transform var(--transition-speed), background-color var(--transition-speed);
+    cursor: pointer;
+}
+
+.discoverCard:hover {
+    transform: translateY(-0.5rem);
+    background-color: var(--primary-color-dark);
+}
+
+.discoverCard span {
+    display: inline-block;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    color: var(--primary-color-dark);
+}
+
+.discoverCard h4 {
+    font-size: 1.2rem;
+    color: var(--text-light);
+}
+
+.commitmentContainer {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    padding: 4rem 1rem;
+    gap: 2rem;
+    background-color: var(--text-dark);
+    border-radius: var(--border-radius);
+}
+
+.commitmentImage img {
+    max-width: 450px;
+}
+
+.commitmentContent {
+    text-align: left;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+    .navMenuBtn {
+        display: none;
+    }
+
+    .navLinks {
+        position: static;
+        flex-direction: row;
+    }
+
+    .navLinks.open {
+        display: flex;
+    }
+
+    .header {
+        padding: 10rem 2rem;
+    }
+
+    .headerContent h1 {
+        font-size: 4rem;
+    }
+
+    .headerImage {
+        max-width: 600px;
+        margin: 2rem auto;
+    }
+
+    .sectionContainer {
+        max-width: var(--max-width);
+    }
+
+    .commitmentContainer {
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: left;
+    }
+
+    .commitmentContent {
+        text-align: left;
+    }
+}
